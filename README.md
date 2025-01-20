@@ -10,9 +10,9 @@ docker exec -i mysql-db mysql -h db -u fastapi_user --password=fastapi_password 
 ````
 2- Test
 ========
- - Les calcules
+ - Les calculs
 ```
-curl -d '{"operation": "4 2 + 2 * 10 5 - 2 / +"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8000/calcule
+curl -d '{"operation": "4 2 + 2 * 10 5 - 2 / +"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8000/calcul
 ```
  - Recuperer le dump
 ```

@@ -1,4 +1,4 @@
 from pydantic import BaseModel, constr
 
-class Calcule(BaseModel):
+class Calcul(BaseModel):
     operation: constr(pattern=r"^[0-9 +-/*]+$")

@@ -1,21 +1,21 @@
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from app.services.RnpCalculator import rnpCalculator
-from app.models.Calcule import Calcule
+from app.models.Calcul import Calcul
 from app.services.Logs import Logs
 
 app = FastAPI()
 
-@app.post("/calcule")
-def rnp(calcule: Calcule):
+@app.post("/calcul")
+def rnp(calcul: Calcul):
     calculator = rnpCalculator()
     logs = Logs()
     try :
-        result = calculator.process(calcule.operation.split())
+        result = calculator.process(calcul.operation.split())
     except:
-        return 'Invalid calculation : ' + calcule.operation
+        return 'Invalid calculation : ' + calcul.operation
 
-    logs.log({'result':result, 'operation':calcule.operation});
+    logs.log({'result':result, 'operation':calcul.operation})
 
     return {"result": result}
 
