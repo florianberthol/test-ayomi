@@ -1,3 +1,5 @@
+create database fastapi_db;
+use fastapi_db;
 create table logs
 (
     id        int auto_increment
